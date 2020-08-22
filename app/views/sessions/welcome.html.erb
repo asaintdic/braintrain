@@ -1,0 +1,7 @@
+<% if session[:user_id] %>
+  <h1>Welcome to Brain-Train, <%= @user.name %>!</h1>
+  <img src="<%= @user.image %>">
+<% else %>
+
+  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<% end %>
