@@ -1,7 +1,28 @@
+
+
 <% if session[:user_id] %>
   <h1>Welcome to Brain-Train, <%= @user.name %>!</h1>
   <img src="<%= @user.image %>">
+  <h2><%=link_to "Learn More Bout Brainwaves", brainwaves_path%></h2>
+  <h1> Learn About The Different Brainwaves</h1>
+  <% @brainwaves.each do |b| %>
+      <ul>
+      <li><h2><%=link_to b.name, brainwafe_path(@brainwave)%></h2></li>
+      <li><%= b.frequency %></li>
+      <l1><%= b.description %></li>
+      </ul>
+  <% end %>
 <% else %>
-
-  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<h1>Welcome To Brain-Train</h1>
+<h3>Please login or sign-up to View More Info</h3>
+<% @brainwaves.each do |b| %>
+  <ul>
+   <li><h2><%= b.name %></h2></li>
+   <li><%= b.frequency %></li>
+   <l1><%= b.description %></li>
+  </ul>
 <% end %>
+  
+<% end %>
+
+

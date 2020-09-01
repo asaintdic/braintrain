@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
-  root 'sessions#welcome'
+  resources :activities do
+    resources :comments
+  end
   
-  resources :user
-
   resources :activities
   
-  resources :brainwave
+  resources :brainwaves
   
   
  
-  get '/auth/facebook/callback' => 'sessions#create'
+  # get '/auth/facebook/callback' => 'sessions#create'
+  root 'sessions#welcome'
+ 
+  get '/login', to: 'sessions#new'
+  get '/auth/facebook/callback', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  delete '/logout', to: 'sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

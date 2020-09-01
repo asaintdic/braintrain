@@ -1,0 +1,15 @@
+<h1> MY Activities</h1>
+
+
+
+<h2> Render all activities for current user</h2>
+
+<% @activities.each do |a| %>
+    <ul>
+     <li><h2><%= link_to a.name, a %></h2></li>
+     <li><%= a.duration %></li>
+     <l1><%= a.category %></li>
+    </ul>
+<% end %>
+
+<h3><li><%=link_to "New Activity", new_activity_path %></li></h3>

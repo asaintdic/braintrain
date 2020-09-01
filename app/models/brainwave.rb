@@ -1,4 +1,5 @@
 class Brainwave < ApplicationRecord
-    has_many :activities
-    has_many :users, through: :activities
+    
+
+    validates_uniqueness_of :name
 end

@@ -1,0 +1,8 @@
+<h1> Learn About The Different Brainwaves</h1>
+<% @brainwaves.each do |b| %>
+    <ul>
+     <li><h2><%=link_to b.name, b%></h2></li>
+     <li><%= b.frequency %></li>
+     <l1><%= b.description %></li>
+    </ul>
+<% end %>

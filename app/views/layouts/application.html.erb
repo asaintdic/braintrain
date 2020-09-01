@@ -11,8 +11,19 @@
 
   <body>
   
-
-
+  <!-- static links-->
+  <li><%= link_to "Home", root_path %></li> 
+ 
+  
+          <!--logged in and logged out -->
+          <% unless logged_in? %>
+          <li><%=link_to "Login", login_path%></li>
+          <li><%=link_to "Signup", signup_path%></li>
+      <% else%>
+      <li><%=link_to "Activities", activities_path %></li>
+      <li><%=link_to "Logout", logout_path, method: "delete"%></li>
+      <% end %>
     <%= yield %>
   </body>
 </html>
+)
