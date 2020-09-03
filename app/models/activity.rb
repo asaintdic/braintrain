@@ -4,6 +4,10 @@ class Activity < ApplicationRecord
     has_many :users, through: :comments
 
 
-    # scope :this_activity_comments, -> { where("activity_id = ?", params[:id])}
+    scope :short_activities, -> { where("duration < 30")}
+
+    scope :long_activities, ->{ where("duration > 30")}
+
+    scope :search, -> (term) {where("name LIKE ?", "%#{term}%") }
 end
  

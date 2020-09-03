@@ -1,15 +1,29 @@
-<h1> MY Activities</h1>
 
 
-
-<h2> Render all activities for current user</h2>
-
-<% @activities.each do |a| %>
+<div class="section no-pad-bot" id="index-banner">
+<div class="container">
+  <br><br>
+  <h4> Search Activities </h4>
+  <%= form_tag(activities_path, method: "get") do %>
+    <%= text_field_tag :term, nil,  id: "Search", placeholder: "enter search term" %>
+  
+    <%= submit_tag "Search"%>
+  <% end %>
+  <h1 class="header center orange-text">View  Different Activities to Train Your Brainwaves</h1>
+  <div class="row center">
+    <h5 class="header col s12 light">Activities</h5>
+  </div>
+  </div>
+  <div class="row center">
+  <% @activities.each do |a| %>
     <ul>
      <li><h2><%= link_to a.name, a %></h2></li>
      <li><%= a.duration %></li>
      <l1><%= a.category %></li>
     </ul>
 <% end %>
+  <br><br>
+</div>
+</div>
 
-<h3><li><%=link_to "New Activity", new_activity_path %></li></h3>
+

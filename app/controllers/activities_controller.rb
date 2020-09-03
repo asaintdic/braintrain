@@ -3,16 +3,17 @@ class ActivitiesController < ApplicationController
 
     def index
       # @user = User.find_by_id(params[:user_id])
-      # if params[:term]
-      #   @activities = @user.activities.search(params[:term])
-      # else
+      if params[:term]
+        @activities = Activity.search(params[:term])
+      else
         @activities = Activity.all
-      # end
+      end
     end
   
     def show
       @activity = Activity.find(params[:id])
-      # @comments = 
+       @short_activities = Activity.short_activities
+       @long_activities = Activity.long_activities
       # @comments = Comment.this_activity_comments
       @comments = Comment.where("activity_id = ?", params[:id])
       # scope :this_activity_comments, ->(params[:id]) {where("activity_id = ?", params[:id])}

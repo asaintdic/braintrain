@@ -261,7 +261,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  materialize-sass (~> 1.0.0)
+  materialize-sass
   omniauth
   omniauth-facebook
   puma (~> 4.1)

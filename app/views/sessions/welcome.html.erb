@@ -1,28 +1,62 @@
 
 
-<% if session[:user_id] %>
-  <h1>Welcome to Brain-Train, <%= @user.name %>!</h1>
-  <img src="<%= @user.image %>">
-  <h2><%=link_to "Learn More Bout Brainwaves", brainwaves_path%></h2>
-  <h1> Learn About The Different Brainwaves</h1>
-  <% @brainwaves.each do |b| %>
-      <ul>
-      <li><h2><%=link_to b.name, brainwafe_path(@brainwave)%></h2></li>
-      <li><%= b.frequency %></li>
-      <l1><%= b.description %></li>
-      </ul>
+
+
+<div class="section no-pad-bot" id="index-banner">
+<div class="container">
+  <br><br>
+  <h1 class="header center orange-text">BrainTrain</h1>
+  <div class="row center">
+    <h5 class="header col s12 light">A new approach to activity based brainwave enhancement</h5>
+  </div>
+  <% if session[:user_id] %>
+  <div class="row center">
+  <a href="/brainwaves" id="download-button" class="btn-large waves-effect waves-light orange">Learn More</a>
+  </div>
+  <% else %>
+  <div class="row center">
+  <a href="/login" id="download-button" class="btn-large waves-effect waves-light orange">Login to Learn More</a>
   <% end %>
-<% else %>
-<h1>Welcome To Brain-Train</h1>
-<h3>Please login or sign-up to View More Info</h3>
-<% @brainwaves.each do |b| %>
-  <ul>
-   <li><h2><%= b.name %></h2></li>
-   <li><%= b.frequency %></li>
-   <l1><%= b.description %></li>
-  </ul>
-<% end %>
-  
-<% end %>
+  <br><br>
+</div>
+</div>
+
+
+<div class="container">
+<div class="section">
+
+  <!--   Icon Section   -->
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="icon-block">
+        
+        <h5 class="center">Brainwave Types</h5>
+
+        <p class="light">Learn about repective brainwaves, their relative wave frequencies,and in what states they are at their most active.</p>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        
+        <h5 class="center">Training Activities</h5>
+
+        <p class="light">Pick an activity based on the activity type and how it correlates to  brainwave frequencies. Train your brain in an optimal direction.</p>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        
+        <h5 class="center">Share your Experience</h5>
+
+        <p class="light">Leave comments on activites and share your progress with your BrainTrain community.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br>
+</div>
 
 

@@ -1,8 +1,22 @@
-<h1> Learn About The Different Brainwaves</h1>
-<% @brainwaves.each do |b| %>
+<div class="section no-pad-bot" id="index-banner">
+<div class="container">
+  <br><br>
+  <h1 class="header center orange-text">Learn How Each Brainwave is Unique</h1>
+  <div class="row center">
+    <h5 class="header col s12 light">Brainwave Types</h5>
+  </div>
+  <div class="row center">
+  <% @brainwaves.each do |b| %>
     <ul>
-     <li><h2><%=link_to b.name, b%></h2></li>
+     <li><h2><%=link_to b.name, b %></h2></li>
      <li><%= b.frequency %></li>
      <l1><%= b.description %></li>
     </ul>
 <% end %>
+  <br><br>
+</div>
+</div>
+
+
+
+
