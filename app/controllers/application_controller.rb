@@ -6,13 +6,21 @@ class ApplicationController < ActionController::Base
     private
 
         def logged_in?
-         !!session[:user_id] 
+         !!current_user
         end
       
         def current_user
-       
-            User.find(session[:user_id])
+         
+ 
+        User.find_by(id: session[:user_id])
+#
         end
         
+        # def redirect_if_logged_out
+        #     unless logged_in?
+        #       redirect_to root_path, notice: "You must be logged in to do that"
+        #     end
+        #   end
+    
    
 end

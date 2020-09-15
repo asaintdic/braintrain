@@ -9,6 +9,7 @@
     <h5 class="header col s12 light">Comments</h5>
     
       <% @comments.each do |comment| %>
+        <%= f.hidden_field :activity_id, value: @activity.id %>
         <p>
           <strong>Comment:</strong>
           <%= comment.body %>
@@ -16,17 +17,20 @@
       <% end %>
 
       <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
+      <%= form_with(model: [ @activity, @activity.comments.build ], local: true) do |form| %>
+       
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+      <% end %>
         </div>
   <div class="row center">
   <a href="/activities" id="download-button" class="btn-large waves-effect waves-light orange">Back to All Activities</a>
   </div>
-  <br><br>
-</div>
-</div>
-
-   
- 
   <br><br>
 </div>
 </div>

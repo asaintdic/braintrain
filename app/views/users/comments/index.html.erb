@@ -1,0 +1,17 @@
+<%= submit_tag "Search"%>
+<% end %>
+<h1 class="header center orange-text">My Comments</h1>
+<div class="row center">
+  <h5 class="header col s12 light">Comments</h5>
+</div>
+</div>
+<div class="row center">
+<% @comments.each do |a| %>
+  <ul>
+   <li><h2><%= link_to a.body, a %></h2></li>
+   
+  </ul>
+<% end %>
+<br><br>
+</div>
+</div>

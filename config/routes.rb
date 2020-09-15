@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+  resources :users do
+    resources :comments
+  end 
+  
   resources :activities
   
   resources :brainwaves
@@ -12,8 +16,8 @@ Rails.application.routes.draw do
   # get '/auth/facebook/callback' => 'sessions#create'
   root 'sessions#welcome'
  
-  get '/login', to: 'sessions#new'
-  get '/auth/facebook/callback', to: 'sessions#create'
+  get '/login', to: 'sessions#new', as: 'login'
+  get '/auth/facebook/callback', to: 'sessions#facebook'
   post '/login', to: 'sessions#create'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
