@@ -2,7 +2,12 @@ class CommentsController < ApplicationController
   before_action :get_activity
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   
+  def new
+    @comment = Comment.new
+  end
+  
   def index
+     
      @comments = @user.comments
   end
     

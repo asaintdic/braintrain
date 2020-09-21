@@ -1,11 +1,15 @@
 class ActivitiesController < ApplicationController
-    before_action :set_activity, except: [:index, :new, :create]
+    # before_action :set_activity, except: [:index, :new, :create]
 
     def index
+      
       if params[:term]
         @activities = Activity.search(params[:term])
       else
-        @activities = Activity.all
+        # byebug
+        get_brainwave
+
+        # Activity.find_by(params[:brainwave_id])
       end
     end
   
@@ -22,10 +26,22 @@ class ActivitiesController < ApplicationController
     def new
         @activity = Activity.new
     end
+
+    def destroy
+      @activity = Activity.find_by_id(params[:id]) 
+    @activity.destroy
+    
+    redirect_to activities_path
+      end
+
   
     
     private
-      
+    
+    def get_brainwave
+      @brainwave = Brainwave.find_by_id(params[:brainwave_id])
+    end
+    
     def set_activity
         @activity = Activity.find_by_id(params[:id])
     end

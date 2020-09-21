@@ -4,6 +4,7 @@
   <h1 class="header center orange-text"><%= @activity.name%></h1>
   <div class="row center">
     <h5 class="header col s12 light"><%= @activity.category%></h5>
+    <h6><%= link_to "Delete Post", activity_path(@activity), method: :delete %></h6>
   </div>
   <div class="row center">
     <h5 class="header col s12 light">Comments</h5>

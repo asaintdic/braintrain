@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
-  resources :activities do
-    resources :comments
-  end
+  # resources :activities do
+  #   resources :comments
+  # end
   
   resources :users do
     resources :comments
   end 
+
+  resources :users do
+    resources :activity_logs
+  end
   
-  resources :activities
+  resources :brainwaves do 
+    resources :activities
+  end
   
-  resources :brainwaves
+  
+  
   
   
  

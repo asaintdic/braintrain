@@ -1,7 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :comments
-    has_many :activities, through: :comments
+    has_many :activity_logs
+    has_many :activities, through: :activity_logs    
     validates :name, presence: true
     validates :email, presence: true
     validates :password, presence: true
