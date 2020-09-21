@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
     belongs_to :brainwave
-    has_many :comments, dependent: :destroy
+    
     has_many :activity_logs
     has_many :users, through: :activity_logs
     

@@ -3,14 +3,17 @@ class ActivitiesController < ApplicationController
 
     def index
       
-      if params[:term]
-        @activities = Activity.search(params[:term])
-      else
-        # byebug
-        get_brainwave
+     @brainwave = Brainwave.find_by(params[:id])
+    
+    #  @activities = @brainwave.activities
+      # if params[:term]
+      #   @activities = Activity.search(params[:term])
+      # else
+     
+      #   get_brainwave
 
-        # Activity.find_by(params[:brainwave_id])
-      end
+      #   # Activity.find_by(params[:brainwave_id])
+      # end
     end
   
     def show
@@ -32,7 +35,7 @@ class ActivitiesController < ApplicationController
     @activity.destroy
     
     redirect_to activities_path
-      end
+    end
 
   
     
