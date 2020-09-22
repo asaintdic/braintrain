@@ -1,0 +1,20 @@
+
+<div class="section no-pad-bot" id="index-banner">
+<div class="container">
+  
+  <h1 class="header center orange-text">My Activities</h1>
+  <div class="row center">
+    <h5 class="header col s12 light">Activities</h5>
+  </div>
+  </div>
+  <div class="row center">
+  <% @user.activities.each do |activity| %>
+    <ul>
+     <li><h2><%=activity.name%></h2></li>
+     <li><%= activity.duration %></li>
+     <l1><%= activity.category %></li>
+    </ul>
+<% end %>
+  <br><br>
+</div>
+</div>

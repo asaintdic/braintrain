@@ -35,6 +35,10 @@ class ActivityLogsController < ApplicationController
     end
 
     def destroy
+      @activity_log = ActivityLog.find_by(params[:id]) 
+      @activity_log.destroy
+    
+      redirect_to activity_logs_path
     end
 
 end

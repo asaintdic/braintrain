@@ -13,5 +13,7 @@ class Activity < ApplicationRecord
     scope :long_activities, ->{ where("duration > 30")}
 
     scope :search, -> (term) {where("name LIKE ?", "%#{term}%") }
+
+    
 end
  

@@ -22,7 +22,8 @@
     <li><%=link_to "Signup", signup_path%></li>
    <% else%>
     <li><%=link_to "Brainwave Types", brainwaves_path %></li>
-    <li><%=link_to "My Activities", activity_logs_path%></li> 
+    <li><%=link_to "My Logs", activity_logs_path%></li> 
+    <li><%=link_to "My Activities", users_path%></li> 
     <li><%=link_to "Logout", logout_path, method: "delete"%></li>
    <% end %>
     </ul>

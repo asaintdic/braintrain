@@ -12,9 +12,11 @@
     </ul>
     <%activity.activity_logs.each do |log|%>
       <ul>
-        <l1><%=log.duration%></li>
-        <l1><%=log.created_at%></li>
-        <l1><%=link_to "New Log", new_activity_activity_log_path(activity)%></li>
+        <li><%=log.duration%></li>
+        <li><%=log.created_at%></li>
+        <li><%=link_to "New Log", new_activity_activity_log_path(activity)%></li>
+        <li><%= link_to "Delete Log", activity_log_path(log), method: :delete %></h6>
+
       </ul>
     <%end%>
     </ul>

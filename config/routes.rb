@@ -21,7 +21,7 @@ Rails.application.routes.draw do
      resources :activity_logs
   end
 
-  resources :activity_logs, only: [:index, :show, :new, :create, :edit, :update]
+  resources :activity_logs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   
   
   
