@@ -1,24 +1,26 @@
 <div class="section no-pad-bot" id="index-banner">
 <div class="container">
-  <br><br>
-  <h4> Search My Activities </h4>
-  <%= form_tag(user_activity_logs_path, method: "get") do %>
-    <%= text_field_tag :term, nil,  id: "Search", placeholder: "enter search term" %>
-  
-    <%= submit_tag "Search"%>
-  <% end %>
   <h1 class="header center orange-text">My Activities</h1>
   <div class="row center">
     <h5 class="header col s12 light">Activities</h5>
   </div>
   </div>
   <div class="row center">
-  <% @user.activity_logs.each do |log|%>
+  <% @activities.each do |activity|%>
     <ul>
-     <li><h2><%=log.activity.name%></h2></li>
-     <l1><%=log.activity.duration%></li>
+     <li><h2><%=activity.name%></h2></li>
+    </ul>
+    <%activity.activity_logs.each do |log|%>
+      <ul>
+        <l1><%=log.duration%></li>
+        <l1><%=log.created_at%></li>
+        <l1><%=link_to "New Log", new_activity_activity_log_path(activity)%></li>
+      </ul>
+    <%end%>
     </ul>
 <% end %>
+<div class="row center">
+  <%= link_to "New Log", new_activity_log_path, :id => "download-button", :class => "btn-large waves-effect waves-light orange" %>
   <br><br>
 </div>
 </div>

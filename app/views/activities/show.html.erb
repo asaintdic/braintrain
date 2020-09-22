@@ -7,19 +7,6 @@
     <h6><%= link_to "Delete Post", activity_path(@activity), method: :delete %></h6>
   </div>
   <div class="row center">
-    <h5 class="header col s12 light">Comments</h5>
-    
-      <% @comments.each do |comment| %>
-        <p>
-          <strong>Comment:</strong>
-          <%= comment.body %>
-        </p>
-      <% end %>
-
-      <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
-        </div>
-  <div class="row center">
   <a href="/activities" id="download-button" class="btn-large waves-effect waves-light orange">Back to All Activities</a>
   </div>
   <br><br>

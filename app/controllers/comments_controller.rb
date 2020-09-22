@@ -43,10 +43,6 @@ class CommentsController < ApplicationController
      
   private
 
-  #  def get_user
-  #   @user = User.find(params[:user_id])
-  #  end
-
    def get_activity
       @activity = Activity.find_by_id(params[:activity_id])
    end

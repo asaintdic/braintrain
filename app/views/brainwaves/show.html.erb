@@ -12,11 +12,12 @@
   <a href="/brainwaves" id="download-button" class="btn-large waves-effect waves-light orange">Back to All Brainwaves</a>
   </div>
   <div class="row center">
-  <a href="/brainwaves/:brainwave_id/activities" id="download-button" class="btn-large waves-effect waves-light orange">View Activities</a>
+  <%= link_to "View Activities", brainwave_activities_path(@brainwave.id), :id => "download-button", :class => "btn-large waves-effect waves-light orange" %>
   </div>
   <br><br>
 </div>
 </div>
+
 
 
 

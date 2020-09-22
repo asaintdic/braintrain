@@ -10,11 +10,18 @@ Rails.application.routes.draw do
   resources :users do
     resources :activity_logs
   end
+
+ 
   
   resources :brainwaves do 
-    resources :activities
+    resources :activities, only: [:show, :index]
   end
   
+  resources :activities, only: [:index, :show, :new, :create, :edit, :update] do
+     resources :activity_logs
+  end
+
+  resources :activity_logs, only: [:index, :show, :new, :create, :edit, :update]
   
   
   

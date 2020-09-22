@@ -1,33 +1,14 @@
-<div class="row">
-<div class="col s12 m6 offset-m3">
-  <div class="card ">
-    <div class="card-content ">
-      <span class="card-title">Create Profile</span>
-      <%= form_for @user, url: new_user_activity_log_path do |f| %>
-        <div>
-            <%= f.label :name%>
-            <%= f.text_field :name%>
-        </div>
-        <div>
-            <%= f.label :email%>
-            <%= f.text_field :email%>
-        </div>
-        <div>
-            <%= f.label :password%>
-            <%= f.password_field :password%>
-        </div>
-        <div>
-            <%= f.label :password_confirmation%>
-            <%= f.password_field :password_confirmation%>
-        </div>
-       
-             <%=f.submit "Signup"%>
-        <%end %>
+
+<h3> New Activity Log Form </h3>
+<%= form_for  @activity_log do |f| %>
+
+<div>   
+    <%= f.collection_select(:activity_id, Activity.all, :id, :name, { prompt: @activity.name  }, class: "browser-default") %> <br/><br/>
+<div>
+    <%= f.label :duration %>
+    <%= f.text_field :duration %>
+   
+         <%=f.submit "Submit"%>
+<%end %>
+
     
-      </div>
-    <div class="card-action">
-    <%= link_to'Log in with Facebook!', '/auth/facebook' %>
-    </div>
-  </div>
-</div>
-</div>
