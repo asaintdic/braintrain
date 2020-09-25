@@ -2,8 +2,8 @@ class ActivityLogsController < ApplicationController
   
     
     def index
-      @activities = current_user.activities
-      
+      # @activities = current_user.activities
+      @activities = Activity.by_user
     end
 
     def show

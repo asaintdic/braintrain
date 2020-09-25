@@ -14,6 +14,6 @@ class Activity < ApplicationRecord
 
     scope :search, -> (term) {where("name LIKE ?", "%#{term}%") }
 
-    # scope :by_user
+    scope :by_user, -> {joins(:activity_logs).where('user_id = user.id')}
 end
  
