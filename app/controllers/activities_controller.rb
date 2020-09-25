@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
    
 
     def index
+      
       @brainwave = Brainwave.find(params[:brainwave_id])
       if params[:term]
         @activities = @brainwave.activities.search(params[:term])
@@ -15,6 +16,7 @@ class ActivitiesController < ApplicationController
   
           
     def show
+      @brainwave = Brainwave.find(params[:brainwave_id])
       @activity = Activity.find(params[:id])
     end
   

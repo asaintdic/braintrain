@@ -15,14 +15,15 @@
         <li><%=log.duration%></li>
         <li><%=log.created_at%></li>
         <li><%=link_to "New Log", new_activity_activity_log_path(activity)%></li>
-        <li><%= link_to "Delete Log", activity_log_path(log), method: :delete %></h6>
+        <li><%= link_to "Edit  Log", edit_activity_log_path(log)%></li>
+        <li><%= link_to "Delete Log", activity_log_path(log), method: :delete %></li>
 
       </ul>
     <%end%>
     </ul>
 <% end %>
 <div class="row center">
-  <%= link_to "New Log", new_activity_log_path, :id => "download-button", :class => "btn-large waves-effect waves-light orange" %>
+  <%= link_to "Try New Activity", new_activity_log_path, :id => "download-button", :class => "btn-large waves-effect waves-light orange" %>
   <br><br>
 </div>
 </div>

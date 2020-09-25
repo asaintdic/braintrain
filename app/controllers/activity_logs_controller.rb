@@ -28,6 +28,11 @@ class ActivityLogsController < ApplicationController
      end
     end
 
+    def edit
+      @activity = Activity.find_by(params[:activity_id])
+      @activity_log = ActivityLog.find(params[:id])
+    end
+
     def update
       @activity_log = ActivityLog.find(params[:id])
         @activity_log.update(activity_log_params)

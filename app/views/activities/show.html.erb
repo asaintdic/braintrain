@@ -7,7 +7,7 @@
     <h6><%= link_to "Delete Post", activity_path(@activity), method: :delete %></h6>
   </div>
   <div class="row center">
-  <a href="/activities" id="download-button" class="btn-large waves-effect waves-light orange">Back to All Activities</a>
+  <%= link_to "Back To All Activities", brainwave_activities_path(@brainwave), :id => "download-button", :class => "btn-large waves-effect waves-light orange" %>
   </div>
   <br><br>
 </div>
