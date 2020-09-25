@@ -8,12 +8,12 @@ class Activity < ApplicationRecord
 
     
 
-    # scope :short_activities, -> { where("duration < 30")}
+    scope :short_activities, -> { where("duration < 30")}
 
     # scope :long_activities, ->{ where("duration > 30")}
 
     scope :search, -> (term) {where("name LIKE ?", "%#{term}%") }
 
-    scope :by_user, -> {joins(:activity_logs).where('user_id = user.id')}
+    scope :by_user, -> {joins(:activity_logs).where('activity_logs.user_id = ?')}
 end
  

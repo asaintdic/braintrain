@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     def index
         @user = current_user
-        @activities = Activity.by_user
+        # @activities = Activity.by_user
     end
 
     def show
